@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is heading tag
+    </h1>
+ 
+    <script>
+        // console.log("Hello Java Script")
+        // alert("hello world")
+        // document.write("Hello")
+
+        //variables
+         
+        // a=3
+        // console.log(typeof a)
+        // console.log(a)
+        
+
+        //data types
+        // Number
+        // String
+        // Object
+        // undefined
+        // null
+        // Symbol
+
+
+        //3 keywords
+        //var-reassigned and redeclared(global)(hosting variable)
+        //let ES6-reassigned but not redeclared(local)(non-hosting)
+        //const ES6-neither reassigned nor redeclared(local)(non-hosting)
+
+        //REDECLARATION AND REASSIGNMENT
+        // var a=10;
+        // var a=100
+        // console.log(a)
+        // a=20
+        // console.log(a)
+        // let b=20;
+        // b=12;
+        // console.log(b)
+        // const c=30;
+        // c=80;
+        // console.log(c)
+
+
+
+        //SCOPE
+        // {
+        //     let a=10;
+        // }
+        // console.log(a)
+
+
+    //     var i=10;
+    //     for(var i=0;i<5;i++)
+    // {
+
+    // }
+    // console.log(i)
+
+    // let i=10;
+    //     for(let i=0;i<5;i++)
+    // {
+
+    // }
+    // console.log(i)
+
+
+    //HOSTING FUNCTION
+    // output()
+    // function output(){
+    //     console.log("hello java script")
+    // }
+    //HOSTING VARIABLE
+    // console.log(a=10)
+    // let a;
+    // console.log(a=10)
+    // var a;
+
+
+    // OPERATORS
+    // console.log(10<5)
+    // console.log(5<=5)
+    // console.log('A'>'B')
+    // console.log('a'<'b')
+    // console.log('5'==5)
+    // console.log('5'===5)
+    // console.log('7'!=7)
+    // console.log('7'!==7)
+    // console.log(5!=5)
+    // console.log(3**2)
+    
+
+    //CONDITIONAL STATEMENTS
+    // let age=18;
+    // if(age>=18){
+    //     console.log("eligible to vote")
+    // }
+    // else if(age>=10 && age<18){
+    //     console.log("eligible for half vote")
+    // }
+    // else{
+    //     console.log("Not eleigible to vote")
+    // }
+
+    // let a=5;
+    // let b=6;
+    // let c=2;
+    // let d=9;
+    // if(a>b){
+    //     if(a>c){
+    //         if(a>d){
+    //             console.log("a is greatest")
+    //         }
+    //         else{
+    //             console.log("d is greatest")
+    //         }
+    //     }
+    // }
+    // else if(b>c){
+    //     if(b>a){
+    //         if(b>d){
+    //             console.log("b is greatest")
+    //         }
+    //         else{
+    //             console.log("d is greatest")
+    //         }
+    //     }
+    // }
+    // else if(c>d){
+    //             console.log("c is greatest")
+            
+            
+    // }
+    
+    // else{
+    //     console.log("d is greatest")
+    // }
+   
+   //DEFAULT ARGUMENT FUNCTION
+    // function output(a,b=100){//arguments
+    //  return a+b
+    // }
+    // // console.log(ouput(10,20))//parameters
+    // // let ans=output(10,20)
+    // // console.log(ans)
+    // let ans=output(10)
+    // console.log(ans)
+
+
+    // 3 types of function
+    // naming function-both function keyword and name
+    // anonymous function-keyword but not name
+    // arrow function-neither keyword nor name
+
+    //ANONYMOUS FUNCTION-IIFE(immediately invoke function expression)-two anonymous functions don't work together
+    // (function(a,b){
+    //     console.log(`Hello Java Script Function ${a+b}`)//template literals
+    // })(10,20)
+
+    // let f1=function(a,b){
+    //     console.log(a+b);
+    // };
+    // let f2=function(a,b){
+    //     console.log(a-b);
+    // };
+    // let ans=f1(10,20);
+    // console.log(ans)
+    // f2(20,10)
+     
+    //ARROW FUNCTION
+    // (()=>{
+    //     console.log("hello")
+    // })()
+    
+    // ((a,b)=>{
+    //     console.log(a+b)
+    // })(10,20)
+    
+
+    // let f1=(a,b)=>a+b
+    // console.log(f1(10,20))
+
+    // CLOSURE-lexical scoping(environment arouund inner function)
+
+    // function Outer(){
+    //     let a=10;
+    //     let b=20;
+    //     function Inner(){
+    //         console.log(a+b)
+    //     }
+    //     return Inner();
+    // }
+    // let ans=Outer();
+    // console.log(ans)
+    // ans()
+
+    // function Outer(){
+    //     let a=10;
+    //     let b=20;
+    //     function Inner(){
+    //         console.log(a+b)
+    //         return a+b
+    //     }
+    //     return Inner();
+    // }
+    // let ans=Outer();
+    // console.log(ans)
+
+
+    //CALL BACK FUNCTION
+    // function f1(a){
+    //     console.log(a)
+    //     a()
+    // }
+    // function f2(){
+    //     console.log("Hello I am f2 function")
+    // }
+
+
+    // f1(f2)
+
+
+    // function output(a,b,c){
+    //     console.log(c)
+    //     c(a,b)
+
+    // }
+    // function add(a,b){
+    //     console.log(a+b)
+    // }
+
+    // output(10,20,add)
+
+    function Output(f1){
+        f1()
+    }
+    Output (
+        function(){
+            console.log("hey java script !!!")
+        }
+
+    )
+
+    </script>
+</body>
+</html>

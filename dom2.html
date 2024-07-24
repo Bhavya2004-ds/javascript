@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            margin: auto;
+            width: 40%;
+            border: 2px solid black;
+            padding:20px;
+        }
+        p{
+           
+            
+           
+            text-align: justify;
+            
+        }
+        .btn{
+            border: none;
+            background-color: beige;
+            padding: 20px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   <div class="box" id="mybox">
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus nesciunt numquam adipisci optio facilis accusantium accusamus sint velit inventore culpa quia, unde qui? Doloribus earum nulla iusto voluptatum at mollitia nesciunt, a distinctio id tempore esse deleniti incidunt, laborum recusandae dolor modi consequuntur, provident ex eaque adipisci omnis tenetur maxime. <br></p>
+    <button class="btn" id="upper">uppercase</button>
+    <button class="btn" id="lower">lowercase</button>
+    <button class="btn" id="big">+</button>
+    <button class="btn" id="small">-</button>
+    <input type="color" id="color">
+    <input type="range" id="range">
+   </div>
+    
+    <script>
+        let counter=16
+    
+        document.getElementById("upper").onclick=function(){
+            document.getElementById("para").style.textTransform="uppercase"
+        }
+        document.getElementById("lower").onclick=function(){
+            document.getElementById("para").style.textTransform="lowercase"
+        }
+        document.getElementById("big").onclick=function(){
+            counter++;
+            console.log(counter+"px")
+            document.getElementById("para").style.fontSize=counter+"px"
+        }
+        document.getElementById("small").onclick=function(){
+            counter--
+            console.log(counter+"px")
+            document.getElementById("para").style.fontSize=counter+"px"
+        }
+        document.getElementById("color").oninput=function(){
+            let color=document.getElementById("color").value;
+            console.log(color)
+        
+            document.getElementById("mybox").style.backgroundColor=color
+        }
+        document.getElementById("range").oninput=function(){
+            let size=document.getElementById("range").value;
+            console.log(size)
+            document.getElementById("para").style.fontSize=size+"px"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input{
+            margin: auto;
+            padding: 40px;
+            width: 45%;
+            box-shadow: 0px 0px 5px grey;
+        }
+        input{
+            width: 44%;
+            padding: 10px;
+            margin: 5px;
+          
+         
+        }
+        button{
+            padding: 10px 30px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="input" >
+        <input type="text" class="inp" id="inp0" placeholder="Enter your name">
+        <input type="text" class="inp" id="inp1" placeholder="Enter your email">
+        <input type="text" class="inp" id="inp2" placeholder="Enter your age">
+        <input type="text"  class="inp" id="inp3" placeholder="Enter your Mobile no.">
+        <input type="text" class="inp" id="inp4" placeholder="Enter your city">
+        <input type="text" class="inp" id="inp5" placeholder="Enter your pincode">
+    <button  id="btn">Submit</button>
+    </div>
+    <script>
+        // document.querySelector("#btn").onclick=function(){
+        //     console.log("hello java script")
+        // }
+        // document.querySelector("button").onclick=function(){
+        //     console.log("hello java script")
+        // }
+        document.querySelector("button").onclick=function(){
+            let a=document.querySelectorAll("input")
+            for(let i of a){
+                console.log(i.value)
+            }
+        }
+        
+        
+
+
+
+        // document.getElementById("btn").onclick=function(){
+        //     for(let i=0;i<6;i++){
+        //         let val=document.getElementById("inp"+i).value;
+        //     document.getElementById("inp"+i).value=''
+        //     document.getElementById("inp"+i).focus()
+        //     console.log(val)
+        //     }
+        // }
+        // document.getElementById("btn").onclick=function(){
+          
+        //         let val=document.getElementsByClassName("inp");
+        //     document.getElementsByClassName("inp").value=''
+        //     document.getElementsByClassName("inp").focus()
+        //     console.log(val)
+            
+        // }
+        // document.getElementById("btn").onclick=function(){
+          
+        //   let val=document.getElementsByClassName("inp");//val is an array
+        //   for(let i=0;i<val.length;i++){
+        //     console.log(val[i].value)
+        //   }
+    //     for(i of val){
+    //         console.log(i.value)
+    //     }
+    //   //a=[0,1,2,3,4]
+    //   for(i of a){
+    //     console.log(i)
+    //   }
+      
+  
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    textarea{
+        padding: 20px;
+      
+        border: 2px solid black;
+    
+
+    }
+    .box{
+        padding: 20px;
+        width: 70%;
+        border: 2px solid black;
+        height: 300px;
+
+
+    }
+</style>
+</head>
+<body>
+
+    <textarea name="" id="text" rows="10" cols="30"></textarea>
+    <div class="box" id="output"></div>
+    <script>
+        document.getElementById("text").oninput=function(){
+            let v=document.getElementById("text").value 
+            console.log(v)
+            // document.getElementById("output").innerText=v 
+            document.getElementById("output").innerHTML=`<h1>${v}</h1>` 
+
+             
+               }
+    </script>
+
+</body>
+</html>

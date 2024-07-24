@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: roboto;
+        }
+        body{
+            background-color: black;
+        }
+        
+        .container{
+            background-color: white;
+            width: 60%;
+            margin: auto;
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 100px;
+
+        }
+        select{
+            width: 25%;
+            height: 40px;
+            margin: 10px 0px;
+        
+        }
+        .color{
+            height: 50px;
+            display: inline-block;
+            border-radius: 200px;
+            width: 50px;
+            /* border: 2px solid black; */
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        #red{
+            background-color: red;
+        }
+        #yellow{
+            background-color:yellow;
+        }  #green{
+            background-color: green;
+        }  #black{
+            background-color: black;
+        }
+        #blue{
+            background-color: blue;
+        }
+        .btn{
+            border: none;
+            background-color: green;
+            padding: 10px;
+            display: inline-block;
+            cursor: pointer;
+            margin: 20px 5px;
+            color: white;
+            border-radius: 5px;
+        }
+        #p{
+            /* border: 2px solid black; */
+            text-align: justify;
+            padding: 20px;
+
+        }
+      
+        
+    </style>
+</head>
+<body >
+    <div class="container">
+        <h1>Select your domain</h1>
+        <select name="" id="">
+            <option value="">--Make a choice--</option>
+            <option value="React" >React</option>
+            <option value="Django">Django</option>
+            <option value="Angular">Angular</option>
+            <option value="AWS">AWS</option>
+        </select><br>
+        <div class="color" id="red"></div>
+    <div class="color" id="yellow"></div>
+    <div class="color" id="green"></div>
+    <div class="color" id="black"></div>
+    <div class="color" id="blue"></div>
+    <div id="p">
+    </div>
+    <div><button class="btn" id="upper">uppercase</button>
+        <button class="btn" id="lower">lowercase</button>
+        <button class="btn" id="big">+</button>
+        <button class="btn" id="small">-</button>
+    </div>
+   
+</div>
+
+<script>
+    document.querySelector("select").oninput=function(){
+        let v=document.querySelector("select").value
+        console.log(v)
+        if(v=="React"){
+             document.querySelector("#p").innerText="React is a JavaScript library for building user interfaces (UIs) on the web. React is a declarative, component based library that allows developers to build reusable UI components and It follows the Virtual DOM (Document Object Model) approach, which optimizes rendering performance by minimizing DOM updates. React is fast and works well with other tools and libraries."
+
+        }
+        else if(v=="Django"){
+            document.querySelector("#p").innerText="Django is a high-level Python web framework that enables rapid development of secure and maintainable websites. Built by experienced developers, Django takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It is free and open source, has a thriving and active community, great documentation, and many options for free and paid-for support."
+
+
+        }
+        else if(v=="Angular"){
+            document.querySelector("#p").innerText="Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular is written in TypeScript. It implements core and optional functionality as a set of TypeScript libraries that you import into your applications.The architecture of an Angular application relies on certain fundamental concepts. The basic building blocks of the Angular framework are Angular components.Components define views, which are sets of screen elements that Angular can choose among and modify according to your program logic and data"
+
+
+        }
+        else if(v=="AWS"){
+            document.querySelector("#p").innerText="Amazon Web Services is a comprehensive suite of cloud computing services that lets you create, operate, and manage a variety of applications. AWS offers a broad range of services that can be used to power your business and help you increase efficiency and improve your scalability. "
+            
+        }
+            else{
+                document.querySelector("#p").innerText=""
+            }
+    }
+        
+       
+   
+    document.getElementById("red").onclick=function(){
+            document.querySelector("body").style.backgroundColor="red"
+         }
+         document.getElementById("yellow").onclick=function(){
+            document.querySelector("body").style.backgroundColor="yellow"
+         }
+         document.getElementById("green").onclick=function(){
+            document.querySelector("body").style.backgroundColor="green"
+         }
+         document.getElementById("black").onclick=function(){
+            document.querySelector("body").style.backgroundColor="black"
+         }
+         let counter=16
+    
+    document.getElementById("upper").onclick=function(){
+        document.getElementById("p").style.textTransform="uppercase"
+    }
+    document.getElementById("lower").onclick=function(){
+        document.getElementById("p").style.textTransform="lowercase"
+    }
+    document.getElementById("big").onclick=function(){
+        counter++;
+        console.log(counter+"px")
+        document.getElementById("p").style.fontSize=counter+"px"
+    }
+    document.getElementById("small").onclick=function(){
+        counter--
+        console.log(counter+"px")
+        document.getElementById("p").style.fontSize=counter+"px"
+    }
+
+    
+
+</script>
+</body>
+
+</html>

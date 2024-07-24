@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MY TO-DO LIST</h1>
+    <input type="text">
+    <button id="btn">ADD</button>
+    <div class="box" >
+    
+        <button id="btn1">COMPLETE BUTTON</button>
+        <button id="btn2">DELETE BUTTON</button>
+ 
+    </div>
+    <div id="task" style="margin: 40px;" ></div>
+    <script>
+       
+        document.querySelector("#btn").onclick=function(){
+           let  v= document.querySelector("input").value
+           
+           document.querySelector("li").innerText=v
+           let val=document.querySelector(".box").innerHTML
+           document.querySelector("#task").innerHTML+=val
+            
+        }
+        let val=document.querySelectorAll("button")
+  
+        let btn1 = document.querySelector("#btn1");
+        
+        btn1.onclick = function(){
+
+            console.log("hey !!")
+        }
+       
+    </script>
+</body>
+</html>
+
+
+<!-- document.querySelector("#task").innerHTML+=`<li>${v}</li><button id="btn1">COMPLETE BUTTON</button><button id="btn2">DELETE BUTTON</button>`
+            let val=document.getElementById("task").innerHTML
+            console.log(val) -->

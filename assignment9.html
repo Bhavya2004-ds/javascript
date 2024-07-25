@@ -97,14 +97,22 @@
 
     </div>
     <script>
-       document.querySelector("#next").onclick=function(){
+       let v=document.querySelectorAll("#next")
+       for(let i of v){
+       i.onclick=function(){
         document.querySelector(".container").scrollBy(900,0)
-    
+       }
+    }
+    let y=document.querySelectorAll("#previous")
+       for(let i of y){
+        i.onclick=function(){
+ document.querySelector(".container").scrollBy(-900,0)
+       }
+       }
+       setInterval(()=>{
+         document.querySelector(".container").scrollBy(900,0)
 
-       }
-       document.querySelector("#previous").onclick=function(){
-        document.querySelector(".container").scrollBy(-900,0)
-       }
+       },10000)
     </script>
 </body>
 </html>

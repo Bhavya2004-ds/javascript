@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //array
+        let a=[10,20,30,"mohit","aman",true,1.5]
+        // console.log(a[0])
+        for(let i of a){
+            console.log(i)
+        }
+        for(let i in a){
+            console.log(i)
+            console.log(a[i])
+        }
+
+        a.forEach((item,i)=>{
+            console.log(item,i)
+        })
+
+        //ARRAY METHODS
+
+        //push
+        a.push("ankit")
+        a.push(1000)
+        console.log(a)
+        //pop
+        a.pop()
+        a.pop()
+        console.log(a)
+        //unshift
+        a.unshift("akshay")
+        console.log(a)
+        a.unshift("3000")
+        console.log(a)
+
+        //shift
+
+        a.shift()
+        a.shift()
+        console.log(a)
+
+        //slice-slice(start,end)
+        a=[10,20,30,"mohit","aman",true,1.5,500,600,700]
+        console.log(  a.slice(2,5))
+        console.log(  a.slice(3,6))
+        console.log(  a.slice(3))
+        console.log(  a.slice(9,3))
+        console.log(  a.slice(-1))
+        console.log(  a.slice(-2))
+        console.log(  a.slice(-8,-2))
+        console.log(  a.slice(-8))
+        console.log(  a.slice(-2,-8))
+        console.log(  a.slice(2,-3))
+        console.log(  a.slice(0,-1))
+
+        //splice-splice(index,removing_count,new_element)
+        // a.splice(2,2,false)
+        // console.log(a)
+        // a.splice(3,4,false,"akshay")
+        // console.log(a)
+        // let b=a.splice(-5,4,false,"akshay")
+        // console.log(a)
+        // console.log(b)
+
+        //map
+        let b=a.map((item)=>{
+            return item+1
+        })
+        console.log(b)
+        console.log(a)
+
+
+        // let c=[]
+        // for(let i of a){
+        //     c.push(i*2)
+        // }
+        // console.log(c)
+
+
+        let c=a.map((item)=>item*2)
+        console.log(c)
+
+        //filter
+        a=[1,2,3,4,5,6,7,8,9,10]
+        let d=a.filter((item)=>{
+            return item>5
+        })
+        console.log(d)
+        a=[1,2,3,4,5,6,7,8]
+        let e=a.map((item)=>{
+            return item>5
+        })
+        console.log(e)
+
+        //reduce
+        a=[1,2,3,4,5,6,7,8,9,10]
+
+        let f=a.reduce((x,y)=>{
+            return x+y
+        })
+        console.log(f)
+
+        //FLAT
+        a=[10,20,[1,2,[true,false],3,4,5],30,40,50,60,70,[7,8,[false,false],9,10,11]]
+        console.log(a[2][2][1])
+
+        a=[1,2,3,4,[100,200,[true,['x','y','z'],false],300,400],5,6,7,8,9,10]
+        console.log(a.flat(3))
+
+        //SPLIT
+        a="10,20,30,40,50,60,70,80,90,100"
+        console.log(a)
+        console.log(typeof a)
+        let g=a.split(",")
+        console.log(g)
+        // a="10-20-30-40-50,60,70,80,90,100"
+        // console.log(a)
+        // console.log(typeof a)
+        // let g=a.split("-")
+        // console.log(g)
+
+        //JOIN
+        let h=g.join("|")
+        console.log(h)
+        
+        </script>
+</body>
+</html>

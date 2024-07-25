@@ -9,37 +9,60 @@
     <h1>MY TO-DO LIST</h1>
     <input type="text">
     <button id="btn">ADD</button>
-    <div class="box" >
-    
-        <button id="btn1">COMPLETE BUTTON</button>
-        <button id="btn2">DELETE BUTTON</button>
- 
+    <div class="box" style="margin: 30px;" >
     </div>
-    <div id="task" style="margin: 40px;" ></div>
+   
     <script>
        
-        document.querySelector("#btn").onclick=function(){
-           let  v= document.querySelector("input").value
-           
-           document.querySelector("li").innerText=v
-           let val=document.querySelector(".box").innerHTML
-           document.querySelector("#task").innerHTML+=val
-            
-        }
-        let val=document.querySelectorAll("button")
-  
-        let btn1 = document.querySelector("#btn1");
-        
-        btn1.onclick = function(){
+       document.querySelector("#btn").onclick=function(){
+        let val=document.querySelector("input").value
+        let li=document.createElement("li")
+        li.className="element"
+        li.innerHTML=val
+        let b1=document.createElement("button")
+        b1.innerHTML="Complete Button"
+        b1.className="btn1"
+        let b2=document.createElement("button")
+        b2.innerHTML="Delete Button"
+        b2.className="btn2"
+        document.querySelector(".box").append(li)
+        document.querySelector(".box").append(b1)
+        document.querySelector(".box").append(b2)
 
-            console.log("hey !!")
+        // document.querySelector(".btn1").onclick=function(){
+        //     document.querySelector(".element").style.color="red"
+        // }
+
+        let v=document.querySelectorAll(".btn1")
+        let c=document.querySelectorAll(".element")
+        for( let i=0,j=0;i<v.length,j<c.length;i++,j++){
+        
+            v[i].onclick=function(){
+                c[j].style.textDecoration="line-through"
+                console.log(c[j].innerHTML)
+            
+            }
+        
         }
+        let v1=document.querySelectorAll(".btn2")
+        let c1=document.querySelectorAll(".element")
+        let c2=document.querySelectorAll(".btn1")
+        for( let i=0,j=0;i<v1.length,j<c1.length;i++,j++){
+        
+            v1[i].onclick=function(){
+                v1[i].remove()
+                c1[i].remove()
+                c2[i].remove()
+                
+                console.log(c1[j].innerHTML)
+            
+            }
+        
+        }
+
        
+    }
+    
     </script>
 </body>
 </html>
-
-
-<!-- document.querySelector("#task").innerHTML+=`<li>${v}</li><button id="btn1">COMPLETE BUTTON</button><button id="btn2">DELETE BUTTON</button>`
-            let val=document.getElementById("task").innerHTML
-            console.log(val) -->

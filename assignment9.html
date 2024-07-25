@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            margin: auto;
+            width:900px;
+            /* border: 2px solid red; */
+            overflow-x:hidden;
+            display: flex;
+            scroll-behavior: smooth;
+            /* position: relative; */
+
+    
+            
+        }
+        .i{
+            position: relative;
+            /* border: 2px solid red; */
+        } 
+        
+        
+        img{
+
+            /* width: 200%; */
+            height: 700px;
+            width: 900px;
+        
+          
+        }
+        #previous,#next{
+            position:absolute;
+            background-color: black;
+            color: white;
+            width: 30px;
+            height: 50px;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+            /* font-weight: 900; */
+
+            
+        }
+        /* .i{
+            width:900px;
+        } */
+        #previous{
+        
+            left: 0px;
+            top:50%;
+        }
+        #next{
+        
+            right: 0px;
+            top:50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+    
+            
+            <div class="i">
+                <button id="previous"><</button>
+        <button id="next">></button>
+
+                <img src="https://images.unsplash.com/photo-1721893484306-23d5379b5d9f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+    
+         <!-- <button id="previous"><</button>
+        <button id="next">></button> -->
+
+        <div class="i">
+            <button id="previous"><</button>
+            <button id="next">></button>
+            <img src="https://images.unsplash.com/photo-1615253043493-9778f020094c?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    
+
+        </div>
+            <div class="i">
+                <button id="previous"><</button>
+                <button id="next">></button>  
+       
+        <img src="https://images.unsplash.com/photo-1493515114968-cd0f4e52bf18?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+       
+            </div>
+
+    </div>
+    <script>
+       document.querySelector("#next").onclick=function(){
+        document.querySelector(".container").scrollBy(900,0)
+    
+
+       }
+       document.querySelector("#previous").onclick=function(){
+        document.querySelector(".container").scrollBy(-900,0)
+       }
+    </script>
+</body>
+</html>

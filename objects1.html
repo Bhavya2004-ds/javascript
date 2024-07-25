@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     let obj=[{
+    //         rollno:1001,
+    //         name:"mohit",
+    //         email:"mohit@gmail.com",
+    //         city:"jaipur",
+    //         age:12
+    //     },
+    //     {
+    //         rollno:1002,
+    //         name:"britney",
+    //         email:"mohit@gmail.com",
+    //         city:"jaipur",
+    //         age:12
+    //     },
+    //     {
+    //         rollno:1003,
+    //         name:"bhanu",
+    //         email:"mohit@gmail.com",
+    //         city:"jaipur",
+    //         age:12
+    //     },
+    //     {
+    //         rollno:1004,
+    //         name:"alok",
+    //         email:"mohit@gmail.com",
+    //         city:"jaipur",
+    //         age:12
+    //     },
+    //     {
+    //         rollno:1005,
+    //         name:"aditi",
+    //         email:"mohit@gmail.com",
+    //         city:"jaipur",
+    //         age:12
+    //     },
+    //     {
+    //         rollno:1006,
+    //         name:"rohit",
+    //         email:"mohit@gmail.com",
+    //         city:"jaipur",
+    //         age:40
+    //     },
+    //     {
+    //         rollno:1007,
+    //         name:"shantanu",
+    //         email:"mohit@gmail.com",
+    //         city:"jaipur",
+    //         age:12
+    //     },
+    //     {
+    //         rollno:1008,
+    //         name:"sohail",
+    //         email:"mohit@gmail.com",
+    //         city:"jaipur",
+    //         age:29
+    //     },
+    //     {
+    //         rollno:1009,
+    //         name:"deren",
+    //         email:"mohit@gmail.com",
+    //         city:"jaipur",
+    //         age:19
+    //     },
+    //     {
+    //         rollno:1010,
+    //         name:"bhaskar",
+    //         email:"mohit@gmail.com",
+    //         city:"jaipur",
+    //         age:12
+    //     }
+    // ]
+    // // console.log(obj)
+    // // for(let i of obj){
+    // //     console.log(i)
+    // // }
+    // let a=obj.filter((item)=>{
+    //     return item.age>18
+    // })
+    // console.log(a)
+
+
+        // console.log(obj)
+        // console.log(obj.rollno,obj.age,obj.city)
+        // console.log(obj["email"],obj["name"])
+        // console.log(obj["name"])
+        // for(let i in obj){
+        //     console.log(i,obj[i])
+        // }
+
+
+        obj={
+            rollno:1001,
+            fname:"mohit",
+            lname:"sharma",
+            email:"mohit@gmail.com",
+            city:"jaipur",
+            age:12,
+            skills:["C++","Java","Mern","Django"],
+            fullname:function(){
+                console.log(this.fname,this.lname)
+                console.log(this)
+            },
+            marks:{
+                "physics":85,
+                "chemistry":40,
+                "maths":93
+            }
+        }
+        // console.log(obj.fullname())
+        console.log(obj.marks.maths)
+    </script>
+</body>
+</html>

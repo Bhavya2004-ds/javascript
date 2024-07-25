@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button id="btn1">PUSH</button>
+    <button id="btn2">POP</button>
+ 
+    <script>
+        let a=[]
+    let push=document.getElementById("btn1")
+     push.addEventListener('click',function(){
+            let val=document.querySelector("input").value
+            a.push(val)
+            console.log(a)
+        })
+        document.querySelector("#btn2").onclick=function(){
+            let h=document.createElement("h1")
+          let val=a.pop()
+          if(val==undefined){
+            alert("Condition underflow")
+          }
+          else{
+            h.innerHTML=val
+          document.querySelector("body").append(h)
+          }
+        }
+    </script>
+
+
+</body>
+</html>

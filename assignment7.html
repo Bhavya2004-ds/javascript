@@ -71,14 +71,19 @@
     </div>
     <script>
         document.querySelector("#next").onclick =function(){
-            document.querySelector(".image").scrollBy(100,0)
+            document.querySelector(".image").scrollBy(300,0)
 
 
         }
         document.querySelector("#previous").onclick=function(){
-            document.querySelector(".image").scrollBy(-100,0)
+            document.querySelector(".image").scrollBy(-300,0)
         }
-           
+         setInterval(()=>{
+            
+            document.querySelector(".image").scrollBy(150,0)
+
+
+        },10000)  
             
           
                 

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        
+        .products{
+           
+            width: 300px;
+            /* border: 2px solid black; */
+            box-shadow: 0px 0px 10px rgb(156, 155, 155);
+            margin: 5px;
+            flex-grow: 1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        h2{
+             font-size: 15px;
+        }
+        
+        img{
+            
+            width: 200px;
+        }
+        button{
+            /* text-align: center; */
+            width: 40%;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border: none;
+            margin: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search{
+            padding: 20px;
+            width: 100%;
+            /* border: 2px solid black; */
+            box-shadow: 0px 0px 0px ;
+            text-align: center;
+        }
+        .i{
+            width: 5%;
+            margin: 0px;
+        }
+        input{
+            width: 30%;
+            margin: 0px;
+            padding: 10px;
+        }
+        i{
+            margin-left: 50px;
+            position: relative;
+            font-size: 20px;
+            
+    
+        }
+        span{
+            position: absolute;
+            background-color:black;
+            color: white;
+            top: -10px;
+            right: -10px;
+            padding:2px 5px;
+            border-radius: 100%;
+            font-size: 10px;
+        }
+        
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="search">
+        <input type="text">
+        <button class="i">Search</button>
+        <i class="fa-solid fa-cart-shopping"><span>0</span></i>
+    </div>
+    <div class="container">
+
+    </div>
+    
+
+    <script>
+        // let prom=fetch('https://dummyjson.com/products')
+        // prom.then((response)=>{
+        //  response.json().then((data)=>{
+            // for (let i of data.products){
+            //     console.log(i)
+
+            //     let div=document.createElement("div")
+            //     let image=document.createElement("img")
+            //     let title=document.createElement("h2")
+            //     let price=document.createElement("h4")
+            //     let description=document.createElement("p")
+            //     let add_cart=document.createElement("button")
+            //     let add=document.createElement("button")
+
+            //     title.innerHTML="Title :"+ i.title
+            //     price.innerHTML="Price:"+ i.price
+            //     description.innerHTML="Description:"+ i.description
+            //     image.src=i.thumbnail
+            //     add_cart.innerHTML="Add to cart"
+            //     add.innerHTML="Buy Now"
+
+            //     div.append(image)
+            //     div.append(title)
+            //     div.append(price)
+            //     div.append(description)
+            //     div.append(add_cart)
+            //     div.append(add)
+            
+            //     document.body.append(div)
+            //     console.log(div)
+        
+                
+
+            // }
+        //  })
+            
+
+        async function FetchData(){
+
+
+        try{
+            let data=await fetch("https://dummyjson.com/products")
+            let json_data=await data.json()
+            console.log(json_data.products)
+             let c=json_data.products.filter((item)=>{
+                return item.price<100
+            })
+            for (let i of c){
+                console.log(i)
+
+                let div=document.createElement("div")
+                let image=document.createElement("img")
+                let title=document.createElement("h2")
+                let price=document.createElement("h4")
+                let description=document.createElement("p")
+                let add_cart=document.createElement("button")
+                let add=document.createElement("button")
+
+                div.className="products"
+                title.innerHTML="Title :"+ i.title
+                price.innerHTML="Price:"+ i.price
+                description.innerHTML="Description:"+ i.description.slice(0,60)
+                image.src=i.thumbnail
+                add_cart.innerHTML="Add to cart"
+                add_cart.className="btn"
+                add.innerHTML="Buy Now"
+
+                div.append(image)
+                div.append(title)
+                div.append(price)
+                div.append(description)
+                div.append(add_cart)
+                div.append(add)
+
+               
+            
+                document.querySelector(".container").append(div)
+
+                let x=document.querySelectorAll(".products")
+                console.log(x.length)
+            
+
+               document.querySelector("input").oninput=function(){
+               for(let i of x){
+                console.log(i.innerHTML)
+                i.remove()
+               }
+
+            
+           }
+
+                let counter=0
+               let v= document.querySelectorAll(".btn")
+               for(let i of v){
+                i.onclick=function(){
+                    counter++
+                    console.log(counter)
+                    document.querySelector("span").innerHTML= counter
+                }
+               }
+
+               
+               
+            
+            }
+            
+               
+           
+
+            document.querySelector(".i").onclick=function(){
+
+                 
+                let val=document.querySelector("input").value
+                console.log(val)
+                // console.log("hello")
+                let t=json_data.products.filter((item)=>{
+                    return item.title.toLowerCase().includes(val.toLowerCase())
+                })
+                console.log(t)
+
+
+                for (let i of t){
+                console.log(i)
+
+                let div=document.createElement("div")
+                let image=document.createElement("img")
+                let title=document.createElement("h2")
+                let price=document.createElement("h4")
+                let description=document.createElement("p")
+                let add_cart=document.createElement("button")
+                let add=document.createElement("button")
+
+                div.className='products'
+                title.innerHTML="Title :"+ i.title
+                price.innerHTML="Price:"+ i.price
+                description.innerHTML="Description:"+ i.description.slice(0,60)
+                image.src=i.thumbnail
+                add_cart.innerHTML="Add to cart"
+                add_cart.className="btn"
+                add.innerHTML="Buy Now"
+
+                div.append(image)
+                div.append(title)
+                div.append(price)
+                div.append(description)
+                div.append(add_cart)
+                div.append(add)
+            
+                document.querySelector(".container").append(div)
+                
+
+
+                let counter=0
+               let v= document.querySelectorAll(".btn")
+               for(let i of v){
+                i.onclick=function(){
+                    counter++
+                    console.log(counter)
+                    document.querySelector("span").innerHTML=counter
+                }
+               }
+               let x=document.querySelectorAll(".products")
+                console.log(x.length)
+            
+
+               document.querySelector("input").oninput=function(){
+               for(let i of x){
+                console.log(i.innerHTML)
+                i.remove()
+               }
+
+               } 
+
+
+               
+            }
+            } 
+                
+            
+        }
+
+        
+        
+        catch{
+            console.log("data fetch nhi hoga")
+
+        }
+            
+        }
+
+        FetchData()
+       
+        // document.querySelector("button").onclick=function(){
+
+        // }
+        
+
+    </script>
+</body>
+</html>

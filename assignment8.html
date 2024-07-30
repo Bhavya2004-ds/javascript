@@ -12,9 +12,13 @@
             /* border: 2px solid black; */
         }
 
-        .box{
+        .col{
 
             display: inline-block;
+            /* border: 2px solid black; */
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
         }
     </style>
 </head>
@@ -22,19 +26,22 @@
     
     
     <script>
-    document.querySelector("body").onmousemove=function(){
-        console.log("hello")
-            let d=document.createElement("div")
-            d.className="box"
-            d.style.borderRadius="100px"
-            d.style.height="100px"
-            d.style.width="100px"
-            document.querySelector("body").append(d)
+        document.querySelector("body").onmousemove=function(){
+            div=document.createElement("div")
+        div.className="col"
+        document.body.append(div)
+
+           let v= document.querySelectorAll(".col")
+           for(let i of v){
+            i.onmouseenter=function(){
         let color=`${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)}`
+        i.style.backgroundColor=`rgb(${color})`}
 
-        d.style.backgroundColor=`rgb(${color})`
-
-    }
+           }
+        }
+       
+          
+    
     </script>
 </body>
 </html>
